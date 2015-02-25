@@ -1,0 +1,22 @@
+
+<%= simple_form_for(@course, defaults: { error_html: { id: 'error' } }, :html => { :class => "form-inline"}) do |f|%>
+<div class = row>
+  <div class="col-md-2 col-md-offset-5">
+    <%= f.input :name%>
+    <br>
+  </div>
+</div>
+<br>
+<div class ="row">
+  <div class ="col-md-3 col-md-offset-5">
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
+  </div>
+</div>
+<% end %>
+<Br>
+  <div class="row">
+    <div class = "col-md-4 col-md-offset-5">
+      <%=  link_to('Back to Courses', courses_path, {class: "btn btn-primary"}) %>
+    </div>
+  </div>
+</div>

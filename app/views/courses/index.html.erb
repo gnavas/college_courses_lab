@@ -1,0 +1,36 @@
+<%= render "shared/navbar" %>
+<div class="container-fluid">
+  <br><Br>
+  <h2 class = "text-center">Courses:</h2>
+  <br>
+
+  <!-- <table style = "border: 1px solid black; border-collapse: collapse"> -->
+  <div class="row">
+    <div class ="col-md-10 col-md-offset-1">
+      <table class ="table table-striped">
+        <tr>
+          <th>Name</th>
+          <th>Info</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        <% @courses.each do |course| %>
+        <tr >
+          <td ><%=course.name  %></td>
+          <td><%= link_to('Info', course_path(course), {class: "btn-xs btn-info"})%></td>
+          <td><%= link_to('Edit', edit_course_path(course), {class: "btn-xs btn-info"})%></td>
+          <td><%= link_to('Delete',course_path(course), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-xs btn-danger")%></td>
+        </tr>
+        <%end %>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class ="col-md-2 col-md-offset-1">
+      <%=  link_to('Add new ', new_course_path, {class: "btn btn-primary"}) %>
+    </div>
+    <div class ="col-md-2 col-md-offset-1">
+      <%=  link_to('See Students', students_path, {class: "btn btn-primary"}) %>
+    </div>
+  </div>

@@ -1,0 +1,38 @@
+<%= render "shared/navbar" %>
+<div class="container-fluid">
+  <br><Br>
+  <h2 class = "text-center">Students:</h2>
+  <br>
+
+  <!-- <table style = "border: 1px solid black; border-collapse: collapse"> -->
+  <div class="row">
+    <div class ="col-md-10 col-md-offset-1">
+      <table class ="table table-striped">
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Info</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        <% @students.each do |student| %>
+        <tr >
+          <td ><%=student.name  %></td>
+          <td ><%= student.age %></td>
+          <td><%= link_to('Info', student_path(student), {class: "btn-xs btn-info"})%></td>
+          <td><%= link_to('Edit', edit_student_path(student), {class: "btn-xs btn-info"})%></td>
+          <td><%= link_to('Delete',student_path(student), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-xs btn-danger")%></td>
+        </tr>
+        <%end %>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class ="col-md-2 col-md-offset-1">
+      <%=  link_to('Add new ', new_student_path, {class: "btn btn-primary"}) %>
+    </div>
+    <div class ="col-md-2 col-md-offset-1">
+      <%=  link_to('See Courses', courses_path, {class: "btn btn-primary"}) %>
+    </div>
+  </div>
