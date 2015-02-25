@@ -1,14 +1,13 @@
-
-<%= simple_form_for(@student, defaults: { error_html: { id: 'error' } }, :html => { :class => "form-inline"}) do |f|%>
-<div class = row>
+<div class="container-fluid">
+<%= simple_form_for(@student, defaults: { error_html: { id: 'error' } }, :html => { :class => "form-group"}) do |f|%>
+<div class = "row">
   <div class="col-md-2 col-md-offset-2">
     <%= f.input :name%>
-    <br>
   </div>
-  <div class = "col-md-1"></div>
+  <div class = "col-md-1">
+  </div>
   <div class="col-md-2">
     <%= f.input :age%>
-    <br>
   </div>
 </div>
 <br>
